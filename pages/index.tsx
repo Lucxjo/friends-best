@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css'
 import { useRouter } from 'next/router'
 import { useTranslations } from 'next-intl'
 import { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
+import Image from 'next/image'
 
 export function getStaticProps({locale}: GetStaticPropsContext) {
   return {
@@ -28,6 +29,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <Image src="/yr.jpg" alt="Young Royals" width={256} height={144} />
         <h1 className={styles.title}>
           {t('welcome')}
         </h1>
