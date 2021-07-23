@@ -26,11 +26,16 @@
   align-items: center;
 }
 
+.footer a:hover {
+  color: #0070f3;
+}
+
 .footer a {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-grow: 1;
+  color: #eaeaea;
 }
 
 .title a {
@@ -53,6 +58,7 @@
 .title,
 .description {
   text-align: center;
+  color: #eaeaea
 }
 
 .description {
@@ -90,10 +96,15 @@
   width: 45%;
 }
 
+.card:link,
+.card:visited {
+  color: #eaeaea
+}
+
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
+  color: #0070f3 !important;
   border-color: #0070f3;
 }
 

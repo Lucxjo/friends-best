@@ -1,0 +1,12 @@
+{
+    "common": {
+        "welcome": "Bienvid@ a Vänner Bäst.",
+        "desc": "Un sitio web de fans de Young Royals con enlaces a diferentes espacios de discusión.",
+        "watch": {
+            "title": "Ver",
+            "desc": "Ver la serie en Netflix"
+        },
+        "discord": "Únase a nuestro servidor de Discord de la comunidad para discutir sobre Young Royals",
+        "reddit": "Únase al subreddit de la comunidad para discutir sobre Young Royals"
+    }
+}
