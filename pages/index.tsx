@@ -28,7 +28,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <meta property="og:title" content="Vänner Bäst | Friends Best" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://vannerba.st/yr.jpg" />
+        <meta property="og:image" content="https://www.vannerba.st/yr.jpg" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@Ludoviko_" />
         <meta name="twitter:creator" content="@Ludoviko_" />
@@ -44,17 +44,21 @@ export default function Home() {
           {t('desc')}
         </p>
         <div className={styles.grid}>
-          <a href="/watch" className={styles.card}>
+          <a href="https://vannerba.st/watch" className={styles.card}>
             <h2>{t('watch.title')} &rarr;</h2>
             <p>{t('watch.desc')} </p>
           </a>
-          <a href="/discord" className={styles.card}>
+          <a href="https://vannerba.st/discord" className={styles.card}>
             <h2>Discord &rarr;</h2>
             <p>{t('discord')}</p>
           </a>
-          <a href="/reddit" className={styles.card}>
+          <a href="https://vannerba.st/reddit" className={styles.card}>
             <h2>Reddit &rarr;</h2>
             <p>{t('reddit')}</p>
+          </a>
+          <a href="https://vannerba.st/learn" className={styles.card}>
+            <h2>{t('learn.title')} &rarr;</h2>
+            <p>{t('learn.desc')}</p>
           </a>
         </div>
       </main>

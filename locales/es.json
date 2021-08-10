@@ -6,6 +6,10 @@
             "title": "Ver",
             "desc": "Ver la serie en Netflix"
         },
+        "learn": {
+            "title": "Aprende",
+            "desc": "Aprende sueco en Babbel (enlace de referencia)"
+        },
         "discord": "Únase a nuestro servidor de Discord de la comunidad para discutir sobre Young Royals",
         "reddit": "Únase al subreddit de la comunidad para discutir sobre Young Royals"
     }
