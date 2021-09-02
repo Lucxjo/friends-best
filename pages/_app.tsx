@@ -1,4 +1,4 @@
-import '../styles/globals.css'
+import 'tailwindcss/tailwind.css'
 import type { AppProps } from 'next/app'
 import {NextIntlProvider} from 'next-intl';
 import PlausibleProvider from 'next-plausible';
