@@ -8,6 +8,7 @@ import Head from "next/head";
 
 export default function BirthdaysPage() {
     const [date, setDate] = useState(new Date());
+    const [copied, setCopied] = useState("Copy!");
     return (
         <>
         <Head>
@@ -19,15 +20,15 @@ export default function BirthdaysPage() {
             <Paragraph>You can generate your birthday command here for UtiliBots&apos; birthday bot.</Paragraph>
             <Heading>I was born on the...</Heading>
             <Paragraph>The format is <strong>DD/MM</strong>.</Paragraph>
-            <DatePicker className="mx-4" selected={date} onChange={
+            <DatePicker className="mx-4 dark:text-gray-300 dark:bg-gray-500 bg-white" selected={date} onChange={
                 // @ts-ignore
-                date => setDate(date)
+                date => {setDate(date); setCopied("Copy!");}
             }
             dateFormat="dd/MM" />
-            <Heading>Command to set my birthday: </Heading>
+            <Heading>Command to set your birthday: </Heading>
             <Paragraph>{`bd!setup ${Intl.DateTimeFormat().resolvedOptions().timeZone} ${moment(date).format("MM/DD")}`}</Paragraph>
-            <CopyToClipboard text={`bd!setup ${Intl.DateTimeFormat().resolvedOptions().timeZone} ${date.getMonth()+1}/${date.getDate()}`}>
-                <button className="mx-4 px-4 dark:text-gray-300 dark:bg-gray-500 bg-white">Copy!</button>
+            <CopyToClipboard onCopy={() => setCopied("Copied!")} text={`bd!setup ${Intl.DateTimeFormat().resolvedOptions().timeZone} ${date.getMonth()+1}/${date.getDate()}`}>
+                <button className="mx-4 px-4 dark:text-gray-300 dark:bg-gray-500 bg-white">{copied}</button>
             </CopyToClipboard>
         </div>
         </>
