@@ -27,7 +27,7 @@ export default function BirthdaysPage() {
             dateFormat="dd/MM" />
             <Heading>Command to set your birthday: </Heading>
             <Paragraph>{`bd!setup ${Intl.DateTimeFormat().resolvedOptions().timeZone} ${moment(date).format("MM/DD")}`}</Paragraph>
-            <CopyToClipboard onCopy={() => setCopied("Copied!")} text={`bd!setup ${Intl.DateTimeFormat().resolvedOptions().timeZone} ${date.getMonth()+1}/${date.getDate()}`}>
+            <CopyToClipboard onCopy={() => setCopied("Copied!")} text={`bd!setup ${Intl.DateTimeFormat().resolvedOptions().timeZone} ${moment(date).format("MM/DD")}`}>
                 <button className="mx-4 px-4 dark:text-gray-300 dark:bg-gray-500 bg-white">{copied}</button>
             </CopyToClipboard>
         </div>
