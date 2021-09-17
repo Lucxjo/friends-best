@@ -10,6 +10,9 @@ module.exports = {
     container: {
       center: true,
     },
+    fontFamily: {
+      'body': ['Ubuntu', 'sans-serif'],
+    }
   },
   variants: {
     extend: {},
