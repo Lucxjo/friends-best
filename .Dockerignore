@@ -1,0 +1,7 @@
+/node_modules
+/.vscode
+/.vercel
+/.next
+/.gitignore
+/docker.sh
+/build_number

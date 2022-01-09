@@ -35,7 +35,8 @@ export default function Home() {
             <LinkCard link="https://vannerba.st/watch" title={`${t('watch.title')}`} sub={t('watch.desc')}/>
             <LinkCard link="https://vannerba.st/discord" title={`Discord`} sub={t('discord')}/>
             <LinkCard link="https://vannerba.st/reddit" title={`Reddit`} sub={t('reddit')}/>
-            <LinkCard link="https://vannerba.st/learn" title={t('learn.title')} sub={t('learn.desc')}/>
+           <LinkCard link="https://vannerba.st/learn" title={t('learn.title')} sub={t('learn.desc')} />
+           <LinkCard link="https://vannerba.st/matrix" title={`Matrix`} sub={t('matrix')} />
           </div>
       </main>
     </div>
