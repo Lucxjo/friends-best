@@ -2,8 +2,7 @@
 m=$(cat ./build_number)
 echo $m
 wait 10
-docker build -t ghcr.io/lucxjo/friends-best:build-$m .
-docker build -t ghcr.io/lucxjo/friends-best:latest .
+docker build -t ghcr.io/lucxjo/friends-best:build-$m -t ghcr.io/lucxjo/friends-best:latest .
 docker push ghcr.io/lucxjo/friends-best:build-$m
 docker push ghcr.io/lucxjo/friends-best:latest
 

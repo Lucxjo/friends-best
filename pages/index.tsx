@@ -31,12 +31,12 @@ export default function Home() {
           <p className="dark:text-gray-300 text-center md:text-2xl text-lg">
             {t('desc')}
           </p>
-          <div className="grid grid-flow-col grid-cols-2 grid-rows-2 gap-6 pt-4 px-8">
-            <LinkCard link="https://vannerba.st/watch" title={`${t('watch.title')}`} sub={t('watch.desc')}/>
-            <LinkCard link="https://vannerba.st/discord" title={`Discord`} sub={t('discord')}/>
-            <LinkCard link="https://vannerba.st/reddit" title={`Reddit`} sub={t('reddit')}/>
-           <LinkCard link="https://vannerba.st/learn" title={t('learn.title')} sub={t('learn.desc')} />
-           <LinkCard link="https://vannerba.st/matrix" title={`Matrix`} sub={t('matrix')} />
+          <div className="grid grid-flow-col grid-cols-2 grid-rows-3 gap-6 pt-4 px-8">
+            <LinkCard link="https://www.netflix.com/title/81210762" title={`${t('watch.title')}`} sub={t('watch.desc')}/>
+            <LinkCard link="https://discord.gg/hyKVDeRJ8Y" title={`Discord`} sub={t('discord')}/>
+            <LinkCard link="https://www.reddit.com/r/YoungRoyals/" title={`Reddit`} sub={t('reddit')}/>
+           <LinkCard link="https://www.talkable.com/x/IchxFl" title={t('learn.title')} sub={t('learn.desc')} />
+           <LinkCard link="https://matrix.to/#/#young-royals:matrix.org" title={`Matrix`} sub={t('matrix')} />
           </div>
       </main>
     </div>

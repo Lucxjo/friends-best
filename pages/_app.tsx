@@ -14,7 +14,7 @@ function _App({ Component, pageProps }: AppProps) {
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@Ludoviko_" />
         <meta name="twitter:creator" content="@Ludoviko_" />
-        <meta property="og:title" content="Vänner Bäst | Friends Best" />
+        <meta property="og:title" content="Vänner Bästa | Friends Best" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.vannerba.st/yr.jpg" />
         <meta name="theme-color" 
