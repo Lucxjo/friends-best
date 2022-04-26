@@ -9,22 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "autoprefixer": "^10.3.3",
     "moment": "^2.29.1",
-    "next": "12",
-    "next-intl": "^2.0.0",
-    "next-plausible": "^2.1.1",
     "postcss": "^8.3.6",
-    "react": "latest",
-    "react-copy-to-clipboard": "^5.0.4",
-    "react-datepicker": "^4.2.1",
-    "react-dom": "latest",
     "tailwindcss": "^2.2.9"
   },
   "devDependencies": {
-    "@types/react": "17.0.14",
-    "@types/react-copy-to-clipboard": "^5.0.1",
-    "@types/react-datepicker": "^4.1.7",
     "eslint": "7.31.0",
     "eslint-config-next": "11.0.1",
     "typescript": "4.3.5"
