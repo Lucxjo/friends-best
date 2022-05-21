@@ -1,13 +1,12 @@
 <template>
 	<a class="card" :href="link">
 		<p>{{ title }}</p>
-		<p>{{ description }}</p>
 	</a>
 </template>
 
 <script>
 export default {
-	props: ['title', 'description', 'link'],
+	props: ['title', 'link'],
 };
 </script>
 
@@ -19,7 +18,7 @@ export default {
 	color: inherit;
 	text-decoration: none;
 	border: 2px solid #000;
-	border-radius: 10px;
+	border-radius: 20px;
 	transition: color 0.15s ease, border-color 0.15s ease;
 }
 
@@ -33,5 +32,13 @@ export default {
 .card:active {
 	color: #0070f3 !important;
 	border-color: #0070f3;
+}
+
+@media (max-width: 600px) {
+	.card {
+		margin: 0.5rem;
+		padding: 1.25rem;
+		width: 9rem;
+	}
 }
 </style>

@@ -10,7 +10,26 @@ import '@/assets/styles/index.scss';
 			spaces.
 		</p>
 		<div class="grid">
-			<LinkCard title="Watch" description="Watch the series on Netflix" link="https://www.netflix.com/title/81210762" />
+			<LinkCard
+				title="Watch →"
+				link="https://www.netflix.com/title/81210762"
+			/>
+			<LinkCard
+				title="Discord →"
+				link="https://discord.gg/hyKVDeRJ8Y"
+			/>
+			<LinkCard
+				title="Reddit →"
+				link="https://www.reddit.com/r/YoungRoyals/"
+			/>
+			<LinkCard
+				title="Babbel (ref) →"
+				link="https://www.talkable.com/x/IchxFl"
+			/>
+			<LinkCard
+				title="Matrix →"
+				link="https://matrix.to/#/#young-royals:matrix.org"
+			/>
 		</div>
 	</div>
 </template>
