@@ -6,3 +6,13 @@
 /docker.sh
 /build_number
 /.env*
+
+# Nuxt dev/build outputs
+.output
+.nuxt
+# Node dependencies
+node_modules
+# System files
+*.log
+build_number
+docker.sh
