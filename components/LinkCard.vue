@@ -1,12 +1,34 @@
 <template>
-	<a class="card" :href="link">
+	<a v-if="isExternal" target="_blank" rel="nofollow noreferrer" class="card" :href="to">
 		<p>{{ title }} →</p>
 	</a>
+	<router-link v-else v-bind="$props" class="card">
+		<p>{{ title }} →</p>
+	</router-link>
 </template>
 
 <script>
+import { RouterLink } from 'vue-router';
+
 export default {
-	props: ['title', 'link'],
+	props: {
+		title: {
+			type: String,
+			required: true,
+		},
+		to: {
+			type: String,
+			required: true,
+		},
+		...RouterLink.props,
+	},
+	computed: {
+		isExternal() {
+			return (
+				typeof this.to === 'string' && this.to.startsWith('http')
+			);
+		},
+	},
 };
 </script>
 
@@ -45,6 +67,5 @@ export default {
 		padding: 1.25rem;
 		width: 9rem;
 	}
-	
 }
 </style>

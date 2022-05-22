@@ -3,7 +3,7 @@
 		<h1 class="title">Utilities for the Discord Server</h1>
         <LinkCard
             title="Birthdays"
-            link="/utilities/birthdays"
+            to="/utilities/birthdays"
          />
 	</div>
 </template>

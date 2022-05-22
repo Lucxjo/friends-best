@@ -13,25 +13,22 @@ import '@/assets/styles/index.scss';
 		<div class="grid">
 			<LinkCard
 				title="Watch"
-				link="https://www.netflix.com/title/81210762"
+				to="https://www.netflix.com/title/81210762"
 			/>
-			<LinkCard title="Discord" link="https://discord.gg/hyKVDeRJ8Y" />
+			<LinkCard title="Discord" to="https://discord.gg/hyKVDeRJ8Y" />
 			<LinkCard
 				title="Reddit"
-				link="https://www.reddit.com/r/YoungRoyals/"
+				to="https://www.reddit.com/r/YoungRoyals/"
 			/>
 			<LinkCard
 				title="Babbel (ref)"
-				link="https://www.talkable.com/x/IchxFl"
+				to="https://www.talkable.com/x/IchxFl"
 			/>
 			<LinkCard
 				title="Matrix →"
-				link="https://matrix.to/#/#young-royals:matrix.org"
+				to="https://matrix.to/#/#young-royals:matrix.org"
 			/>
-			<LinkCard
-				title="Discord Utilities"
-				link="/utilities"
-			/>
+			<LinkCard title="Discord Utilities" to="/utilities" />
 		</div>
 	</div>
 </template>
