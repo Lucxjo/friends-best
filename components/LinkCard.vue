@@ -2,13 +2,14 @@
 	<a v-if="isExternal" target="_blank" rel="nofollow noreferrer" class="card" :href="to">
 		<p>{{ title }} →</p>
 	</a>
-	<router-link v-else v-bind="$props" class="card">
+	<NuxtLink v-else v-bind="$props" class="card">
 		<p>{{ title }} →</p>
-	</router-link>
+	</NuxtLink>
 </template>
 
 <script>
 import { RouterLink } from 'vue-router';
+
 
 export default {
 	props: {

@@ -25,7 +25,7 @@ import '@/assets/styles/index.scss';
 				to="https://www.talkable.com/x/IchxFl"
 			/>
 			<LinkCard
-				title="Matrix →"
+				title="Matrix"
 				to="https://matrix.to/#/#young-royals:matrix.org"
 			/>
 			<LinkCard title="Discord Utilities" to="/utilities" />
