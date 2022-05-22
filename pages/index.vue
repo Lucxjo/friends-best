@@ -1,7 +1,3 @@
-<script>
-import '@/assets/styles/index.scss';
-</script>
-
 <template>
 	<div class="container">
 		<h1 class="title">Vänner Bästa</h1>
@@ -32,3 +28,7 @@ import '@/assets/styles/index.scss';
 		</div>
 	</div>
 </template>
+
+<script>
+import '@/assets/styles/index.scss';
+</script>
