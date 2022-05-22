@@ -1,6 +1,6 @@
 <template>
 	<a class="card" :href="link">
-		<p>{{ title }}</p>
+		<p>{{ title }} →</p>
 	</a>
 </template>
 
@@ -21,6 +21,11 @@ export default {
 	border-radius: 20px;
 	transition: color 0.15s ease, border-color 0.15s ease;
 }
+.card p {
+	margin: 0;
+	font-size: 1.25rem;
+	line-height: 1.5;
+}
 
 .card:link,
 .card:visited {
@@ -40,5 +45,6 @@ export default {
 		padding: 1.25rem;
 		width: 9rem;
 	}
+	
 }
 </style>
