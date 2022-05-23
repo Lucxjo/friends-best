@@ -34,6 +34,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use '../assets/styles/colours';
 .card {
 	margin: 1rem;
 	padding: 1.5rem;
@@ -58,8 +59,8 @@ export default {
 .card:hover,
 .card:focus,
 .card:active {
-	color: #0070f3 !important;
-	border-color: #0070f3;
+	color: colours.$accent-colour-light !important;
+	border-color: colours.$accent-colour-light;
 }
 
 @media (max-width: 600px) {

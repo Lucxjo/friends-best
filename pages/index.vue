@@ -6,7 +6,7 @@
 			spaces.
 		</p>
 		<strong>It's official! There is going to be another season!</strong>
-		<div class="grid">
+		<div class="grid-3">
 			<LinkCard
 				title="Watch"
 				to="https://www.netflix.com/title/81210762"

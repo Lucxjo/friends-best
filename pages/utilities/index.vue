@@ -2,24 +2,22 @@
 	<NavBar :links="navLinks" />
 	<div class="container">
 		<h1 class="title">Utilities for the Discord Server</h1>
-		<LinkCard title="Birthdays" to="/utilities/birthdays" />
+		<div class="grid-2">
+			<LinkCard title="Birthdays" to="/utilities/birthdays" />
+			<LinkCard title="Time" to="/utilities/time" />
+		</div>
 	</div>
 </template>
 
-<script>
-export default {
-	data() {
-		return {
-			navLinks: [
-				{
-					img: {
-						name: '/icons/home.svg',
-                        alt: 'Home',
-					},
-					to: '/',
-				},
-			],
-		};
+<script setup>
+const navLinks = [
+	{
+		img: {
+			name: '/icons/home.svg',
+			alt: 'Go Home',
+		},
+		to: '/',
+        name: "Home",
 	},
-};
+];
 </script>

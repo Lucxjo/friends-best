@@ -1,23 +1,44 @@
 <template>
 	<nav>
 		<div v-for="link in links" :key="link">
-			<NuxtLink :to="link.to" class="nav-button">
-				<img :src="link.img.name" :alt="link.img.alt" />
-			</NuxtLink>
+			<div class="nav-button">
+				<NuxtLink :to="link.to">
+					<img :src="link.img.name" :alt="link.img.alt" />
+					<p>{{ link.name }}</p>
+				</NuxtLink>
+			</div>
 		</div>
 	</nav>
 </template>
 
 <style lang="scss" scoped>
+@use '../assets/styles/colours';
 nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1rem;
+	margin: 0 auto;
+	position: -webkit-sticky;
+	position: sticky;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
+
+nav :hover {
+	filter: colours.$filter-accent-colour-light;
+}
+
+nav a {
+	text-decoration: none;
+	color: black;
+}
+
+p {
+	padding: 0;
+	margin: 0;
+}
+
 .nav-button {
-    padding: .25rem;
-	margin: .25rem;
+	margin: 0 1rem;
+	padding: 0.5rem;
 }
 </style>
 

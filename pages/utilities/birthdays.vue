@@ -16,27 +16,23 @@
 	</div>
 </template>
 
-<script>
-export default {
-	data() {
-		return {
-			navLinks: [
-				{
-					img: {
-						name: '/icons/arrow-left.svg',
-						alt: 'Back to Utilities',
-					},
-					to: '/utilities',
-				},
-				{
-					img: {
-						name: '/icons/home.svg',
-						alt: 'Home',
-					},
-					to: '/',
-				},
-			],
-		};
+<script setup>
+const navLinks = [
+	{
+		img: {
+			name: '/icons/arrow-left.svg',
+			alt: 'Back to Utilities',
+		},
+		to: '/utilities',
+        name: "Utilities",
 	},
-};
+	{
+		img: {
+			name: '/icons/home.svg',
+			alt: 'Go Home',
+		},
+		to: '/',
+        name: "Home",
+	},
+];
 </script>

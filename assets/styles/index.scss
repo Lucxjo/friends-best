@@ -21,7 +21,14 @@
 	color: #eaeaea;
 }
 
-.grid {
+.grid-2 {
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	grid-template-columns: 1fr 1fr;
+}
+
+.grid-3 {
 	display: grid;
 	align-items: center;
 	justify-content: center;
