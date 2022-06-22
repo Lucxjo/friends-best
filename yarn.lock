@@ -4500,8 +4500,8 @@ unctx@^1.1.4:
     unplugin "^0.6.1"
 
 undici@^5.2.0:
-  version "5.4.0"
-  resolved "https://registry.yarnpkg.com/undici/-/undici-5.4.0.tgz#c474fae02743d4788b96118d46008a24195024d2"
+  version "5.5.1"
+  resolved "https://registry.yarnpkg.com/undici/-/undici-5.5.1.tgz#baaf25844a99eaa0b22e1ef8d205bffe587c8f43"
 
 unenv@^0.5.2:
   version "0.5.2"
