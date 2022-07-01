@@ -5,7 +5,7 @@
 			A Young Royals fan website with links to different discussion
 			spaces.
 		</p>
-		<strong>It's official! There is going to be another season!</strong>
+		<strong>HAPPY BIRTHDAY YOUNG ROYALS 👑🎂</strong>
 		<div class="grid-3">
 			<LinkCard
 				title="Watch"
