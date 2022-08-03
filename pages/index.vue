@@ -5,7 +5,7 @@
 			A Young Royals fan website with links to different discussion
 			spaces.
 		</p>
-		<strong>HAPPY BIRTHDAY YOUNG ROYALS 👑🎂</strong>
+		<strong>Season 2 coming out November 2022</strong>
 		<div class="grid-3">
 			<LinkCard
 				title="Watch"
