@@ -20,7 +20,7 @@
 		"sass-loader": "13.0.2"
 	},
 	"dependencies": {
-		"@nuxtjs/i18n": "7.2.3",
+		"@nuxtjs/i18n": "7.3.0",
 		"vite": "3.0.4",
 		"vue": "3.2.37",
 		"webpack": "5.74.0"
