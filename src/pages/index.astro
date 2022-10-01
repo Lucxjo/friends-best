@@ -1,11 +1,17 @@
-<template>
-	<div class="container">
+---
+import Layout from '../layouts/Layout.astro';
+import LinkCard from '../components/LinkCard.astro';
+---
+
+<Layout title="Vänner Bästa">
+	<main>
+		<div class="container">
 		<h1 class="title">Vänner Bästa</h1>
 		<p>
 			A Young Royals fan website with links to different discussion
 			spaces.
 		</p>
-		<strong>Season 2 coming out November 2022</strong>
+		<strong>Season 2 coming out 1st November 2022</strong>
 		<div class="grid-3">
 			<LinkCard
 				title="Watch"
@@ -27,8 +33,5 @@
 			<LinkCard title="Discord Utilities" to="/utilities" />
 		</div>
 	</div>
-</template>
-
-<script>
-import '@/assets/styles/index.scss';
-</script>
+	</main>
+</Layout>

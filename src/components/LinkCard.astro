@@ -1,39 +1,24 @@
-<template>
-	<a v-if="isExternal" target="_blank" rel="nofollow noreferrer" class="card" :href="to">
-		<p>{{ title }} →</p>
+---
+export interface Props {
+	title: string;
+	to: string;
+}
+
+const { to, title } = Astro.props;
+
+const isExternal = to.startsWith('http');
+---
+{ isExternal == true ? (
+	<a href={to} target="_blank" rel="noopener noreferrer" class="card">
+		<p>{title} →</p>
 	</a>
-	<NuxtLink v-else v-bind="$props" class="card">
-		<p>{{ title }} →</p>
-	</NuxtLink>
-</template>
-
-<script>
-import { RouterLink } from 'vue-router';
-
-
-export default {
-	props: {
-		title: {
-			type: String,
-			required: true,
-		},
-		to: {
-			type: String,
-			required: true,
-		},
-		...RouterLink.props,
-	},
-	computed: {
-		isExternal() {
-			return (
-				typeof this.to === 'string' && this.to.startsWith('http')
-			);
-		},
-	},
-};
-</script>
-
-<style lang="scss" scoped>
+) : (
+	<a href={to} class="card">
+		<p>{title} →</p>
+	</a>
+)
+}
+<style lang="scss">
 @use '../assets/styles/colours';
 .card {
 	margin: 1rem;

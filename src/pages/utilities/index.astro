@@ -1,0 +1,26 @@
+---
+import LinkCard from "../../components/LinkCard.astro";
+import NavBar from "../../components/NavBar.astro";
+import Layout from '../../layouts/Layout.astro';
+
+const navLinks = [
+	{
+		img: {
+			src: '/icons/home.svg',
+			alt: 'Go Home',
+		},
+		to: '/',
+        name: "Home",
+	},
+];
+---
+<Layout title="Vänner Bästa | Utilities">
+<NavBar links={navLinks} />
+    <div class="container">
+		<h1 class="title">Utilities for the Discord Server</h1>
+		<div class="grid-2">
+			<LinkCard title="Birthdays" to="/utilities/birthdays" />
+			<LinkCard title="Time" to="/utilities/time" />
+        </div>
+    </div>
+</Layout>
