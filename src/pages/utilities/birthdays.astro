@@ -1,5 +1,5 @@
 ---
-import NavBar from "../../components/NavBar.astro";
+import TimeZone from "../../components/TimeZone.vue";
 import Layout from "../../layouts/Layout.astro";
 
 const navLinks = [
@@ -22,8 +22,7 @@ const navLinks = [
 ];
 ---
 
-<Layout title="Vänner Bästa | Birthdays">
-    <NavBar links={navLinks} />
+<Layout title="Vänner Bästa | Birthdays"  navLinks={navLinks}>
     <div class="container">
 		<h1 class="title">Birthdays</h1>
 		<p>
@@ -35,7 +34,7 @@ const navLinks = [
 		</p>
 		<h2>
 			Your timezone:
-			{ Intl.DateTimeFormat().resolvedOptions().timeZone }
+			<TimeZone client:load/>
 		</h2>
 	</div>
 </Layout>
