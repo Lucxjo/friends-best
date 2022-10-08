@@ -3,8 +3,9 @@
 import NavBar from "../../components/NavBar.astro";
 import TimeZone from "../../components/TimeZone.vue";
 import Layout from "../../layouts/Layout.astro";
+import TimeFormat from "../../components/TimeFormat.vue";
+import UnixTime from "../../components/UnixTime.vue";
 
-const crntTime = Date.now();
 const navLinks = [
 	{
 		img: {
@@ -25,124 +26,53 @@ const navLinks = [
 ];
 ---
 
-<Layout title="Time" navLinks={navLinks}>
+<Layout title="VännerBästa | Time" navLinks={navLinks}>
 	<div class="container">
 		<h1 class="title">Time Utilities</h1>
 		<p>
 			Your current timezone:
 			<TimeZone client:load />
 		</p>
-		<p>The current time in Unix Epoch: <code>{ Math.floor(crntTime / 1000) }</code> <br /> or <code>{crntTime}</code> in Unix millis</p>
+		
+		<UnixTime client:load/>
 
 		<p>
 			To format the time for Discord, you can use: <br />
-			<code>
-				{ `<t:${Math.floor(crntTime / 1000)}:f>` }
-			</code>
-			<span>
-				to get
-				<code
-					>{
-						Intl.DateTimeFormat(Intl.Locale, {
+			<TimeFormat formats={[{
 							day: 'numeric',
 							month: 'long',
 							year: 'numeric',
-						}).format(crntTime)
-					}
-					{
-						Intl.DateTimeFormat(Intl.Locale, {
-							hour: '2-digit',
-							minute: '2-digit',
-						}).format(crntTime)
-					}</code
-				></span
-			>
+						}, {hour: '2-digit', minute: '2-digit'}]} dFormat="f" client:load />
 			<br />
-			<code>
-				{ `<t:${Math.floor(crntTime / 1000)}:F>` }
-			</code>
-			<span>
-				to get
-				<code
-					>{
-						Intl.DateTimeFormat(Intl.Locale, {
+			<TimeFormat formats={[{
 							weekday: 'long',
 							day: 'numeric',
 							month: 'long',
 							year: 'numeric',
-						}).format(crntTime)
-					}
-					{
-						Intl.DateTimeFormat(Intl.Locale, {
+						}, { hour: '2-digit', minute: '2-digit', }]} dFormat="F" client:load />
+			<br />
+			<TimeFormat formats={[{
 							hour: '2-digit',
 							minute: '2-digit',
-						}).format(crntTime)
-					}</code
-				></span
-			>
+						}]} dFormat="t" client:load />
 			<br />
-			<code>
-				{ `<t:${Math.floor(crntTime / 1000)}:t>` }
-			</code>
-			<span>
-				to get
-				<code>
-					{
-						Intl.DateTimeFormat(Intl.Locale, {
-							hour: '2-digit',
-							minute: '2-digit',
-						}).format(crntTime)
-					}</code
-				></span
-			>
-			<br />
-			<code>
-				{ `<t:${Math.floor(crntTime / 1000)}:T>` }
-			</code>
-			<span>
-				to get
-				<code>
-					{
-						Intl.DateTimeFormat(Intl.Locale, {
+			<TimeFormat formats={[{
 							hour: '2-digit',
 							minute: '2-digit',
 							second: '2-digit',
-						}).format(crntTime)
-					}</code
-				></span
-			>
+						}]} dFormat="T" client:load />
 			<br />
-			<code>
-				{ `<t:${Math.floor(crntTime / 1000)}:d>` }
-			</code>
-			<span>
-				to get
-				<code>
-					{
-						Intl.DateTimeFormat(Intl.Locale, {
+			<TimeFormat formats={[{
 							day: '2-digit',
                             month: '2-digit',
                             year: 'numeric',
-						}).format(crntTime)
-					}</code
-				></span
-			>
+						}]} dFormat="d" client:load />
 			<br />
-			<code>
-				{ `<t:${Math.floor(crntTime / 1000)}:D>` }
-			</code>
-			<span>
-				to get
-				<code>
-					{
-						Intl.DateTimeFormat(Intl.Locale, {
+			<TimeFormat formats={[{
 							day: 'numeric',
                             month: 'long',
                             year: 'numeric',
-						}).format(crntTime)
-					}</code
-				></span
-			>
+						}]} dFormat="D" client:load />
 		</p>
 	</div>
 </Layout>
