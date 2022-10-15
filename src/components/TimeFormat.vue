@@ -32,7 +32,7 @@ const crntTime = Date.now();
 	<span>
 		to get
 		<code>
-            <span v-for="format in props.formats" :key="formats.findIndex(format)">
+            <span v-for="format in props.formats" :key="Math.floor(Math.random()*1000)">
                 {{Intl.DateTimeFormat(Intl.Locale, format).format(crntTime) + ' '}}
             </span>
         </code>
