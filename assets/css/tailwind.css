@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    background-color: wheat;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        background-color: #1E293B;
+        color: antiquewhite;
+    }
+}
