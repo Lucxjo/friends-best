@@ -1,0 +1,51 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model content_data {
+  id                  Int                @id @default(autoincrement())
+  data                String             @db.VarChar
+  type                String             @db.VarChar
+  localised_content   localised_content? @relation(fields: [localised_contentId], references: [id])
+  localised_contentId Int?
+}
+
+model localised_content {
+  id        Int            @id @default(autoincrement())
+  language  String         @db.VarChar
+  content   String         @db.VarChar
+  data      content_data[]
+  element   page_elements? @relation(fields: [elementId], references: [id])
+  elementId Int?
+}
+
+model page_elements {
+  id               Int                 @id @default(autoincrement())
+  name             String              @db.VarChar
+  type             String              @db.VarChar
+  localisedContent localised_content[]
+  page             pages?              @relation(fields: [pageId], references: [id])
+  pageId           Int?
+}
+
+model pages {
+  id          Int             @id @default(autoincrement())
+  name        String          @db.VarChar
+  description String          @db.VarChar
+  elements    page_elements[]
+  site        sites?          @relation(fields: [siteId], references: [id])
+  siteId      Int?
+}
+
+model sites {
+  id        Int     @id @default(autoincrement())
+  site_name String  @db.VarChar
+  owner_id  String  @db.VarChar
+  site_url  String  @db.VarChar
+  pages     pages[]
+}

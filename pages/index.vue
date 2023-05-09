@@ -1,12 +1,12 @@
 <template>
     <div class="grid h-screen place-items-center">
         <div class="grid place-items-center">
-        <h1 class="text-3xl font-bold underline">Vänner Bästa</h1>
-        <div class="mt-10 place-items-center">
+        <h1 class="text-6xl font-bold underline">Vänner Bästa</h1>
+        <div class="mt-10 mx-4 place-items-center">
             <p>A Young Royals fan website with links to different discussion spaces.</p>
             <strong class="pt-5">Season 2 is out now!</strong>
         </div>
-        <div class="grid grid-cols-2 lg:grid-cols-3 mt-10">
+        <div class="grid grid-cols-2 md:grid-cols-3 mt-10">
             <LLink v-for="link in links" :to="link.href" :title="link.title" />
         </div>
         </div>
@@ -30,10 +30,6 @@ const links: Array<{href: string, title: string}> = [
     {
         href: "https://www.talkable.com/x/IchxFl",
         title: "Babbel (ref)"
-    },
-    {
-        href: "https://masto.nu/yrdiscord",
-        title: "Mastodon"
     },
     {
         href: "/utilities",

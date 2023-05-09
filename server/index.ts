@@ -1,9 +1,8 @@
-import mongoose from 'mongoose';
 const runtimeConfig = useRuntimeConfig();
-import {Nitro} from 'nitropack';
+import { PrismaClient } from '@prisma/client';
+import { Nitro } from 'nitropack';
+
+const prisma = new PrismaClient();
 
 export default async (_nitroApp: Nitro) => {
-    mongoose.connect(runtimeConfig.mongoUri)
-        .then(() => console.log('connected to db'))
-        .catch(err => console.log('error connecting to db', err));
 };

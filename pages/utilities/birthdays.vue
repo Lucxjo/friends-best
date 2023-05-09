@@ -1,0 +1,19 @@
+<template>
+    <div>
+        <div class="grid h-screen place-items-center">
+        <div class="grid place-items-center">
+        <h1 class="text-6xl font-bold underline p-4">Birthdays</h1>
+        <p class="p-4">
+            Discord bots are changing. <br />
+            This means that we can no longer provide you with the command to set your birthday. <br />
+            Instead, this page now gives you your timezone for use with Discord bots.
+        </p>
+        <h2 class="p-4 text-4xl" >Your timezone: <span class="underline" >{{ timezone }}</span></h2>
+        </div>
+    </div>
+    </div>
+</template>
+
+<script setup lang="ts">
+const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+</script>
