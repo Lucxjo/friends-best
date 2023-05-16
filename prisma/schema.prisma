@@ -49,3 +49,14 @@ model sites {
   site_url  String  @db.VarChar
   pages     pages[]
 }
+
+model user {
+  id String @id @default(uuid())
+  name String
+  discord_id String @unique
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  is_admin Boolean @default(false)
+  is_staff Boolean @default(false)
+  is_member Boolean @default(false)
+}

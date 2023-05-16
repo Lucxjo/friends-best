@@ -1,6 +1,7 @@
 <template>
     <div>
-        <div class="grid h-screen place-items-center">
+        <NavHeader class="h-screen-1/20" />
+        <div class="grid h-screen-19/20 place-items-center">
         <div class="grid place-items-center">
         <h1 class="text-6xl font-bold underline p-4">Time Utilities</h1>
         <p class="p-4" >Your current timezone: {{ timezone }}</p>

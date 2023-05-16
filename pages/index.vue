@@ -1,5 +1,6 @@
 <template>
-    <div class="grid h-screen place-items-center">
+    <NavHeader :links="false" class="h-screen-1/20" />
+    <div class="grid h-screen-19/20 place-items-center">
         <div class="grid place-items-center">
         <h1 class="text-6xl font-bold underline">Vänner Bästa</h1>
         <div class="mt-10 mx-4 place-items-center">
@@ -14,6 +15,7 @@
 </template>
 
 <script setup lang="ts">
+
 const links: Array<{href: string, title: string}> = [
     {
         href: "https://netflix.com",
@@ -34,6 +36,10 @@ const links: Array<{href: string, title: string}> = [
     {
         href: "/utilities",
         title: "Discord Utilities"
+    },
+    {
+        href: "/dash",
+        title: "Dashboard"
     }
 ]
 </script>
