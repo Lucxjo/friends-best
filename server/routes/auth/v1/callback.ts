@@ -33,6 +33,14 @@ const UserGuildSchema = z.object({
     deaf: z.boolean(),
 });
 
+var userToWrite: {
+    discord_id: string,
+    name: string,
+    is_admin: boolean,
+    is_staff: boolean,
+    is_member: boolean,
+}
+
 export default defineEventHandler(async (event) => {
     const { code } = getQuery(event)
     let create_user = false
@@ -78,11 +86,13 @@ export default defineEventHandler(async (event) => {
         discriminator: string,
     } = await userReq.json();
 
-    create_user = await prisma.user.findUnique({
+    const dbUser = await prisma.user.findUnique({
         where: {
             discord_id: user.id
         }
-    }).then((u) => create_user = !u)
+    })
+
+    create_user = dbUser === null
 
     const guilds = await fetch("https://discord.com/api/users/@me/guilds", {
         headers: {
@@ -114,100 +124,65 @@ export default defineEventHandler(async (event) => {
         if (member.roles.find((r) => r === runtimeConfig.discordAdminRoleId)) {
             console.log('admin')
 
-            if (create_user) {
-                prisma.user.create({
-                    data: {
-                        discord_id: user.id,
-                        name: user.username + '#' + user.discriminator,
-                        is_admin: true,
-                        is_staff: true,
-                        is_member: true
-                    }
-                })
-            } else {
-                prisma.user.update({
-                    where: {
-                        discord_id: user.id
-                    },
-                    data: {
-                        is_admin: true,
-                        is_staff: true,
-                        is_member: true
-                    }
-                })
+            userToWrite = {
+                discord_id: user.id,
+                name: user.username + '#' + user.discriminator,
+                is_admin: true,
+                is_staff: true,
+                is_member: true
             }
         } else if (member.roles.find((r) => r === runtimeConfig.discordStaffRoleId)) {
             console.log('staff')
 
-            if (create_user) {
-                prisma.user.create({
-                    data: {
-                        discord_id: user.id,
-                        name: user.username + '#' + user.discriminator,
-                        is_admin: false,
-                        is_staff: true,
-                        is_member: true
-                    }
-                })
-            } else {
-                prisma.user.update({
-                    where: {
-                        discord_id: user.id
-                    },
-                    data: {
-                        is_admin: false,
-                        is_staff: true,
-                        is_member: true
-                    }
-                })
+            userToWrite = {
+                discord_id: user.id,
+                name: user.username + '#' + user.discriminator,
+                is_admin: false,
+                is_staff: true,
+                is_member: true
             }
         } else {
-            if (create_user) {
-                prisma.user.create({
-                    data: {
-                        discord_id: user.id,
-                        name: user.username + '#' + user.discriminator,
-                        is_admin: false,
-                        is_staff: false,
-                        is_member: true
-                    }
-                })
-            } else {
-                prisma.user.update({
-                    where: {
-                        discord_id: user.id
-                    },
-                    data: {
-                        is_admin: false,
-                        is_staff: false,
-                        is_member: true
-                    }
-                })
+            console.log('member')
+
+            userToWrite = {
+                discord_id: user.id,
+                name: user.username + '#' + user.discriminator,
+                is_admin: false,
+                is_staff: false,
+                is_member: true
             }
         }
     } else {
         console.log('not member')
 
-        if (create_user) {
-            prisma.user.create({
-                data: {
-                    discord_id: user.id,
-                    name: user.username + '#' + user.discriminator,
-                    is_admin: false,
-                    is_staff: false,
-                    is_member: false
-                }
-            })
-        } else {
-            prisma.user.update({
+        userToWrite = {
+            discord_id: user.id,
+            name: user.username + '#' + user.discriminator,
+            is_admin: false,
+            is_staff: false,
+            is_member: false
+        }
+    }
+
+    if (create_user) {
+        await prisma.user.create({
+            data: userToWrite
+        })
+    } else {
+        const transformedUser: typeof userToWrite = {
+            discord_id: user.id,
+            name: user.username + '#' + user.discriminator,
+            is_admin: userToWrite.is_admin,
+            is_staff: userToWrite.is_staff,
+            is_member: userToWrite.is_member
+        }
+
+        if (userToWrite !== transformedUser) {
+            await prisma.user.update({
                 where: {
                     discord_id: user.id
                 },
-                data: {
-                    is_admin: false,
-                    is_staff: false,
-                    is_member: false
-                }
+                data: userToWrite
             })
         }
     }
