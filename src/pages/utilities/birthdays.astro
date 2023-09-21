@@ -23,18 +23,20 @@ const navLinks = [
 ---
 
 <Layout title="Vänner Bästa | Birthdays"  navLinks={navLinks}>
-    <div class="container">
-		<h1 class="title">Birthdays</h1>
-		<p>
-			Discord bots are changing. <br />
-			This means that we can no longer provide you with the command to set
-			your birthday. <br />
-			Instead, this page now gives you your timezone for use with Discord
-			bots.
-		</p>
-		<h2>
-			Your timezone:
-			<TimeZone client:load/>
-		</h2>
+    <div class="container grid place-items-center">
+		<div class="grid place-items-center">
+			<h1 class="text-6xl font-bold underline p-4">Birthdays</h1>
+			<p class="p-4">
+				Discord bots are changing. <br />
+				This means that we can no longer provide you with the command to set
+				your birthday. <br />
+				Instead, this page now gives you your timezone for use with Discord
+				bots.
+			</p>
+			<h2 class="p-4 text-4xl">
+				Your timezone:
+				<TimeZone class="underline" client:load/>
+			</h2>
+		</div>
 	</div>
 </Layout>

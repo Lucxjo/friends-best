@@ -38,8 +38,8 @@ const { title, navLinks } = Astro.props;
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
 
 body {
-	font-family: 'Ubuntu', sans-serif !important;
 	background-color: colours.$bg-colour-light;
+	font-family: 'Ubuntu', sans-serif !important;
 }
 
 .container {
@@ -94,5 +94,13 @@ body {
 		width: 90%;
 		grid-template-columns: 1fr 1fr;
 	}
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1E293B !important;
+        color: antiquewhite;
+    }
 }
 </style>

@@ -27,16 +27,17 @@ const navLinks = [
 ---
 
 <Layout title="VännerBästa | Time" navLinks={navLinks}>
-	<div class="container">
-		<h1 class="title">Time Utilities</h1>
-		<p>
+	<div class="container grid place-items-center">
+	<div class="grid place-items-center">
+		<h1 class="text-6xl font-bold underline p-4">Time Utilities</h1>
+		<p class="p-4">
 			Your current timezone:
 			<TimeZone client:load />
 		</p>
-		
+
 		<UnixTime client:load/>
 
-		<p>
+		<p class="p-4">
 			To format the time for Discord, you can use: <br />
 			<TimeFormat formats={[{
 							day: 'numeric',

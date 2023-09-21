@@ -4,15 +4,17 @@ import LinkCard from '../components/LinkCard.astro';
 ---
 
 <Layout title="Vänner Bästa">
-	<main>
-		<div class="container">
-		<h1 class="title">Vänner Bästa</h1>
-		<p>
-			A Young Royals fan website with links to different discussion
-			spaces.
-		</p>
-		<strong>Season 2 coming out 1st November 2022</strong>
-		<div class="grid-3">
+	<main class="grid place-items-center h-screen">
+		<div class="grid place-items-center">
+		<h1 class="text-6xl font-bold underline">Vänner Bästa</h1>
+		<div class="mt-10 mx-4 place-items-center" >
+			<p>
+				A Young Royals fan website with links to different discussion
+				spaces.
+			</p>
+			<strong class="pt-5" >It's official! Series 3 is coming!</strong>
+		</div>
+		<div class="grid grid-cols-2 md:grid-cols-3 mt-10">
 			<LinkCard
 				title="Watch"
 				to="https://www.netflix.com/title/81210762"
