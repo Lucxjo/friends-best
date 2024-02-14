@@ -1,0 +1,66 @@
+---
+export interface Props {
+    links: {
+        to: string;
+        name: string;
+        img: {
+            src: string;
+            alt: string;
+        }
+    }[]
+}
+
+const { links } = Astro.props;
+---
+
+<nav>
+{ links.map(link => (
+    <div class="nav-button">
+				<a href={link.to}>
+					<img src={link.img.src} alt={link.img.alt} />
+					<p>{ link.name }</p>
+                </a>
+		</div>
+    ))
+}
+</nav>
+
+<style lang="scss">
+@use '../assets/styles/colours';
+nav {
+	margin: 0 auto;
+	position: -webkit-sticky;
+	position: sticky;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+nav :hover {
+	filter: colours.$filter-accent-colour-light;
+}
+
+nav a {
+	text-decoration: none;
+	color: black;
+}
+
+p {
+	padding: 0;
+	margin: 0;
+}
+
+.nav-button {
+	margin: 0 1rem;
+	padding: 0.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    nav :not(:hover) {
+		filter: colours.$filter-link-colour-dark;
+	}
+	.nav-button :hover {
+		filter: invert(100%) sepia(25%) saturate(4030%) hue-rotate(177deg) brightness(98%) contrast(97%);
+	}
+}
+</style>

@@ -10,3 +10,11 @@ build-all:
 
 git:
     git add -A && git commit -sS && git push
+
+serve: build-all
+    ./friends-best
+
+go-tidy:
+    cd ./server && go mod tidy && cd ..
+go-get MOD:
+    cd ./server && go get {{MOD}} && cd ..
